@@ -16,7 +16,7 @@ dependencies {
 }
 
 teavm {
-    teavmTarget("js") {
+    js {
         mainClass.set("com.izhan.jsdosDragDosCanvas.DragDosCanvas")
         targetType.set(org.teavm.gradle.TeaVMTargetType.JAVASCRIPT)
         minifying.set(true)
