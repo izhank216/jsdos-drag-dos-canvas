@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.teavm' version '0.8.0'
+    id 'org.teavm' version '0.13.0'
 }
 
 group = 'com.izhan'
@@ -11,18 +11,16 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.teavm:teavm-classlib:0.8.0'
-    implementation 'org.teavm:teavm-jso:0.8.0'
+    implementation 'org.teavm:teavm-classlib:0.13.0'
+    implementation 'org.teavm:teavm-jso:0.13.0'
 }
 
 teavm {
-    targets {
-        create("js") {
-            type = org.teavm.gradle.TeaVMTargetType.JAVASCRIPT
-            mainClass = 'com.izhan.jsdosDragDosCanvas.DragDosCanvas'
-            minifying = false
-            sourceMaps = true
-            targetFile = file("$buildDir/js/jsdos-drag-dos-canvas.js")
-        }
+    teavmTarget("js") {
+        mainClass.set("com.izhan.jsdosDragDosCanvas.DragDosCanvas")
+        targetType.set(org.teavm.gradle.TeaVMTargetType.JAVASCRIPT)
+        minifying.set(true)
+        sourceMaps.set(true)
+        targetFile.set(file("$buildDir/js/jsdos-drag-dos-canvas.js"))
     }
 }
