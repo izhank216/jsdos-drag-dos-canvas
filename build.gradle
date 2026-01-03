@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'org.teavm' version '0.8.0'
+}
+
+group = 'com.izhan'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.teavm:teavm-classlib:0.8.0'
+    implementation 'org.teavm:teavm-jso:0.8.0'
+}
+
+teavm {
+    targetType = 'javascript'
+    mainClass = 'com.izhan.jsdosDragDosCanvas.DragDosCanvas'
+    minifying = false
+    sourceMaps = true
+    targetFile = file("$buildDir/js/jsdos-drag-dos-canvas.js")
+}
