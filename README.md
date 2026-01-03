@@ -5,7 +5,7 @@ This plugin for JSDOS is used to make the DOS Canvas be draggable.
 
 ## Usage
 
-Include `jsdos-drag-dos-canvas.js` after js-dos, then call:
+Include `jsdos-drag-dos-canvas.js` after js-dos, create a DOS instance, and make the canvas draggable:
 
 ```html
 <script src="jsdos.js"></script>
@@ -14,6 +14,9 @@ Include `jsdos-drag-dos-canvas.js` after js-dos, then call:
 <canvas id="dosCanvas" width="640" height="400"></canvas>
 
 <script>
-    DragDosCanvas.makeDosCanvasDraggable("dosCanvas");
+    Dos(document.getElementById('dosCanvas'), { wdosboxUrl: "wdosbox.js" })
+        .ready().then(function(emulator) {
+            DragDosCanvas.makeDosCanvasDraggable("dosCanvas");
+        });
 </script>
 ```
