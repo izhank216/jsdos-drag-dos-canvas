@@ -16,9 +16,9 @@ dependencies {
 }
 
 teavm {
-    targetType = 'javascript'
-    mainClass = 'com.izhan.jsdosDragDosCanvas.DragDosCanvas'
-    minifying = false
-    sourceMaps = true
-    targetFile = file("$buildDir/js/jsdos-drag-dos-canvas.js")
+    mainClass.set('com.izhan.jsdosDragDosCanvas.DragDosCanvas')
+    targetType.set(org.teavm.gradle.TeaVMTargetType.JAVASCRIPT)
+    minifying.set(false)
+    sourceMaps.set(true)
+    targetFile.set(file("$buildDir/js/jsdos-drag-dos-canvas.js"))
 }
