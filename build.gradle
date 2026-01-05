@@ -19,8 +19,6 @@ dependencies {
 teavm {
     js {
         mainClass.set("com.izhan.jsdosDragDosCanvas.DragDosCanvas")
-        minifying.set(true)
-        sourceMap.set(true)
         entryPointName.set("main")
         outputDir.set(file("$buildDir/js"))
         targetFileName.set("jsdos-drag-dos-canvas.js")
