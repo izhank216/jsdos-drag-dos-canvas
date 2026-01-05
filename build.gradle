@@ -1,6 +1,3 @@
-import org.teavm.gradle.JSModuleType
-import org.teavm.gradle.OptimizationLevel
-
 plugins {
     id 'java'
     id 'org.teavm' version '0.13.0'
@@ -25,8 +22,8 @@ teavm {
         entryPointName.set("main")
         outputDir.set(file("$buildDir/js"))
         targetFileName.set("jsdos-drag-dos-canvas.js")
-        moduleType.set(JSModuleType.NONE)
-        optimization.set(OptimizationLevel.BALANCED)
+        setModuleType("NONE")
+        setOptimization("BALANCED")
         strict.set(false)
         obfuscated.set(true)
     }
