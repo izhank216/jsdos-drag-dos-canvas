@@ -11,16 +11,22 @@ repositories {
 }
 
 dependencies {
+    implementation teavm.libs.jso
+    implementation teavm.libs.jsoApis
     implementation 'org.teavm:teavm-classlib:0.13.0'
-    implementation 'org.teavm:teavm-jso:0.13.0'
 }
 
 teavm {
     js {
         mainClass.set("com.izhan.jsdosDragDosCanvas.DragDosCanvas")
-        target = "javascript"
         minifying.set(true)
-        sourceMaps.set(true)
-        targetFile.set(file("$buildDir/js/jsdos-drag-dos-canvas.js"))
+        sourceMap.set(true)
+        entryPointName.set("main")
+        outputDir.set(file("$buildDir/js"))
+        targetFileName.set("jsdos-drag-dos-canvas.js")
+        moduleType.set(org.teavm.gradle.JSModuleType.NONE)
+        optimization.set(org.teavm.gradle.OptimizationLevel.BALANCED)
+        strict.set(false)
+        obfuscated.set(true)
     }
 }
